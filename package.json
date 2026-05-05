@@ -1,0 +1,39 @@
+{
+  "name": "flux-studio",
+  "displayName": "FLUX Studio",
+  "description": "FLUX-C guard constraint IDE - compile to bytecode, view proofs",
+  "version": "0.1.0",
+  "publisher": "superinstance",
+  "engines": { "vscode": "^1.75.0" },
+  "categories": ["Programming Languages", "Debuggers"],
+  "activationEvents": ["onLanguage:guard", "workspaceContains:**/*.guard"],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [{
+      "id": "guard",
+      "aliases": ["GUARD Constraint", "guard"],
+      "extensions": [".guard"],
+      "configuration": "./guard.language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "guard",
+      "scopeName": "source.guard",
+      "path": "./syntaxes/guard.tmLanguage.json"
+    }],
+    "commands": [{
+      "command": "flux.compile",
+      "title": "FLUX: Compile to FLUX-C",
+      "category": "FLUX"
+    },{
+      "command": "flux.prove",
+      "title": "FLUX: Generate Proof Certificate",
+      "category": "FLUX"
+    }],
+    "keybindings": [{
+      "command": "flux.compile",
+      "key": "ctrl+shift+f5",
+      "mac": "cmd+shift+f5",
+      "when": "editorTextFocus && languageId == guard"
+    }]
+  }
+}
