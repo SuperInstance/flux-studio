@@ -6,7 +6,7 @@
   "publisher": "CoCapn",
   "engines": { "vscode": "^1.75.0" },
   "categories": ["Programming Languages", "Debuggers"],
-  "keywords": ["flux", "guard", "safety-critical", "coq", "formal-verification", "constraints"],
+  "keywords": ["flux", "guard", "safety-critical", "coq", "formal-verification", "constraints", "compilation"],
   "activationEvents": ["onLanguage:guard", "workspaceContains:**/*.guard"],
   "main": "./extension.js",
   "contributes": {
