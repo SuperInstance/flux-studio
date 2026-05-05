@@ -1,11 +1,12 @@
 {
   "name": "flux-studio",
   "displayName": "FLUX Studio",
-  "description": "FLUX-C guard constraint IDE - compile to bytecode, view proofs",
+  "description": "FLUX-C guard constraint IDE — compile to provably terminating bytecode with Coq-verified proof certificates. For safety-critical systems: DO-254 DAL A, ISO 26262 ASIL-D, IEC 61508 SIL 3.",
   "version": "0.1.0",
-  "publisher": "superinstance",
+  "publisher": "CoCapn",
   "engines": { "vscode": "^1.75.0" },
   "categories": ["Programming Languages", "Debuggers"],
+  "keywords": ["flux", "guard", "safety-critical", "coq", "formal-verification", "constraints"],
   "activationEvents": ["onLanguage:guard", "workspaceContains:**/*.guard"],
   "main": "./extension.js",
   "contributes": {
@@ -20,20 +21,32 @@
       "scopeName": "source.guard",
       "path": "./syntaxes/guard.tmLanguage.json"
     }],
-    "commands": [{
-      "command": "flux.compile",
-      "title": "FLUX: Compile to FLUX-C",
-      "category": "FLUX"
-    },{
-      "command": "flux.prove",
-      "title": "FLUX: Generate Proof Certificate",
-      "category": "FLUX"
-    }],
-    "keybindings": [{
-      "command": "flux.compile",
-      "key": "ctrl+shift+f5",
-      "mac": "cmd+shift+f5",
-      "when": "editorTextFocus && languageId == guard"
-    }]
+    "commands": [
+      {
+        "command": "flux.compile",
+        "title": "FLUX: Compile to FLUX-C",
+        "category": "FLUX"
+      },
+      {
+        "command": "flux.prove",
+        "title": "FLUX: Generate Proof Certificate",
+        "category": "FLUX"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "flux.compile",
+        "key": "ctrl+shift+f5",
+        "mac": "cmd+shift+f5",
+        "when": "editorTextFocus && languageId == guard"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SuperInstance/flux-studio"
+  },
+  "bugs": {
+    "url": "https://github.com/SuperInstance/flux-studio/issues"
   }
 }
