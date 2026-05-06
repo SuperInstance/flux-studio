@@ -1,0 +1,44 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Microsoft/vscode-tmlanguage/master/tmlanguage.schema.json",
+	"name": "FLUX-C",
+	"scopeName": "source.flux-c",
+	"fileTypes": ["flux-c"],
+	"patterns": [
+		{
+			"name": "comment.line.flux-c",
+			"match": ";.*$"
+		},
+		{
+			"name": "keyword.control.flux-c",
+			"match": "\\b(JMP|JZ|JNZ|LOAD|STORE|PUSH|POP|CALL|RET|HALT|ASSERT|REQUIRE)\\b"
+		},
+		{
+			"name": "constant.numeric.flux-c",
+			"match": "\\b(0x[0-9A-Fa-f]+|[0-9]+)\\b"
+		},
+		{
+			"name": "string.quoted.flux-c",
+			"match": "'[^']*'"
+		},
+		{
+			"name": "variable.parameter.flux-c",
+			"match": "\\$[A-Za-z_][A-Za-z0-9_]*"
+		},
+		{
+			"name": "entity.name.label.flux-c",
+			"match": "^[A-Za-z_][A-Za-z0-9_]*:"
+		},
+		{
+			"name": "support.constant.register.flux-c",
+			"match": "\\b(R[0-7]|PC|SP|FLAGS)\\b"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.flux-c",
+				"match": "\\b(JMP|JZ|JNZ|LOAD|STORE|PUSH|POP|CALL|RET|HALT|ASSERT|REQUIRE)\\b"
+			}]
+		}
+	}
+}

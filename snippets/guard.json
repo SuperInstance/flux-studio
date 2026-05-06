@@ -1,0 +1,38 @@
+[
+	{
+		"id": "guard.require",
+		"prefix": "req",
+		"body": "REQUIRE ${1:condition} OTHERWISE ${2:message};",
+		"description": "Require constraint with fallback message"
+	},
+	{
+		"id": "guard.guard",
+		"prefix": "guard",
+		"body": "GUARD ${1:expression} WHEN ${2:condition} ELSE ${3:fallback};",
+		"description": "Guard with condition and fallback"
+	},
+	{
+		"id": "guard.assert",
+		"prefix": "assert",
+		"body": "ASSERT ${1:condition} WITH PRIORITY ${2:HIGH};",
+		"description": "Assert constraint with priority"
+	},
+	{
+		"id": "guard.ensure",
+		"prefix": "ensure",
+		"body": "ENSURE ${1:property} IS ${2:value} WHEN ${3:context};",
+		"description": "Ensure property constraint"
+	},
+	{
+		"id": "guard.range",
+		"prefix": "range",
+		"body": "${1:var} in [${2:min}, ${3:max}] with priority ${4:HIGH}",
+		"description": "Range constraint with priority"
+	},
+	{
+		"id": "guard.threshold",
+		"prefix": "thresh",
+		"body": "${1:var} > ${2:value} when ${3:condition}",
+		"description": "Threshold constraint"
+	}
+]

@@ -1,1 +1,47 @@
-{"$schema":"https://raw.githubusercontent.com/Microsoft/vscode-tmlanguage/master/tmlanguage.schema.json","name":"GUARD","scopeName":"source.guard","fileTypes":["guard"],"patterns":[{"match":"\\b(in|when|with|priority)\\b","name":"keyword.guard"},{"match":"\\b(HIGH|MEDIUM|LOW|CRITICAL)\\b","name":"constant.guard"},{"match":"\\[\\s*[0-9.-]+\\s*,\\s*[0-9.-]+\\s*\\]","name":"string.guard"},{"match":"#[^\n]*","name":"comment.guard"},{"match":"\\b[A-Za-z_][A-Za-z0-9_]*\\b","name":"variable.guard"}]}
+{
+	"$schema": "https://raw.githubusercontent.com/Microsoft/vscode-tmlanguage/master/tmlanguage.schema.json",
+	"name": "GUARD",
+	"scopeName": "source.guard",
+	"fileTypes": ["guard"],
+	"patterns": [
+		{
+			"name": "comment.line.guard",
+			"match": "#.*$"
+		},
+		{
+			"name": "keyword.control.guard",
+			"match": "\\b(REQUIRE|ASSERT|GUARD|WHEN|ELSE|ENSURE|OTHERWISE|WITH|PROPERTY|IS)\\b"
+		},
+		{
+			"name": "constant.language.guard",
+			"match": "\\b(HIGH|MEDIUM|LOW|CRITICAL)\\b"
+		},
+		{
+			"name": "string.range.guard",
+			"match": "\\[\\s*[0-9.-]+\\s*,\\s*[0-9.-]+\\s*\\]"
+		},
+		{
+			"name": "variable.other.guard",
+			"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+		},
+		{
+			"name": "keyword.operator.guard",
+			"match": "(>|>=|<=|<|==|!=)"
+		},
+		{
+			"name": "constant.numeric.guard",
+			"match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.guard",
+				"match": "\\b(REQUIRE|ASSERT|GUARD|WHEN|ELSE|ENSURE|OTHERWISE|WITH|PROPERTY|IS)\\b"
+			}, {
+				"name": "constant.language.guard",
+				"match": "\\b(HIGH|MEDIUM|LOW|CRITICAL)\\b"
+			}]
+		}
+	}
+}
